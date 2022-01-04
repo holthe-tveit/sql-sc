@@ -49,10 +49,7 @@ jobs:
 
       - name: Deploy migrations to Azure SQL
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
-      - uses: addnab/docker-run-action@v3
-        with:
-         image: flyway/flyway
-         options: -url=jdbc:h2:mem:test -user=sa info
+      - run: docker run --rm flyway/flyway -url=jdbc:h2:mem:test -user=sa info
         
 
       - name: Deploy to Azure Web App
