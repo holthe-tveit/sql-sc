@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLSC.Web", "SQLSC.Web\SQLSC.Web.csproj", "{601C4F97-585C-4AC1-9CE2-42FB5A985A9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B28814BE-5DA4-40E0-BC2E-B53836F47CF4}"
+	ProjectSection(SolutionItems) = preProject
+		SQLSC\.Dockerfile = SQLSC\.Dockerfile
+	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B8958CD1-5F56-48E9-94BC-80DAC370B260}"
 EndProject

@@ -47,6 +47,14 @@ jobs:
         with:
           name: .net-app
 
+      - name: Deploy migrations to Azure SQL
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - uses: addnab/docker-run-action@v3
+        with:
+         image: flyway/flyway
+         options: -url=jdbc:h2:mem:test -user=sa info
+        
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
