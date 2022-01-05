@@ -49,7 +49,7 @@ jobs:
 
       - name: Deploy migrations to Azure SQL
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
-      - run: docker run --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
+      - run: docker run -v ${PWD}/sql:/flyway/sql --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
         
 
       - name: Deploy to Azure Web App
