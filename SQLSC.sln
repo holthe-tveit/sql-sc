@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{053BF1C9-6E6E-4F8F-9DAE-9DB76494D663}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWithEFC6", "WebWithEFC6\WebWithEFC6.csproj", "{719AF4E7-EFC1-484F-9E82-C9F7D40687C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWithEFC6", "WebWithEFC6\WebWithEFC6.csproj", "{719AF4E7-EFC1-484F-9E82-C9F7D40687C0}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseProject", "DatabaseProject\DatabaseProject.sqlproj", "{2D696C96-B3C2-4ABA-BC3A-5E6A4E2085A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebWithDBProject", "WebWithDBProject\WebWithDBProject.csproj", "{83C336AD-1186-4D48-B2C2-1C7C35E44512}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{2D696C96-B3C2-4ABA-BC3A-5E6A4E2085A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D696C96-B3C2-4ABA-BC3A-5E6A4E2085A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D696C96-B3C2-4ABA-BC3A-5E6A4E2085A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{83C336AD-1186-4D48-B2C2-1C7C35E44512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C336AD-1186-4D48-B2C2-1C7C35E44512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C336AD-1186-4D48-B2C2-1C7C35E44512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C336AD-1186-4D48-B2C2-1C7C35E44512}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
