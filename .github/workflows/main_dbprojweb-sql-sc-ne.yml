@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up .NET Core
+      - name: Set up .NET Core 6
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
@@ -25,8 +25,14 @@ jobs:
       - name: Build with dotnet
         run: dotnet build WebWithDBProject/WebWithDBProject.csproj --configuration Release
 
+      - name: Set up .NET Core 5
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+          include-prerelease: true
       - name: Build DacPac
         run: dotnet build DBPack/DBPack.csproj --configuration Release
+
 
       - name: dotnet publish
         run: dotnet publish WebWithDBProject/WebWithDBProject.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
