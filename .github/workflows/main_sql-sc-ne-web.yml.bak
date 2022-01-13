@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build SQLSC.Web/SQLSC.Web.csproj  --configuration Release
+        run: dotnet build SQLSC.sln  --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish SQLSC.Web/SQLSC.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish SQLSC.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -47,6 +47,9 @@ jobs:
         with:
           name: .net-app
 
+      - name: Deploy migrations to Azure SQL
+        uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
+      - run: docker run -v ${PWD}/sql:/flyway/sql --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
         
 
       - name: Deploy to Azure Web App

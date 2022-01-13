@@ -25,6 +25,9 @@ jobs:
       - name: Build with dotnet
         run: dotnet build WebWithDBProject/WebWithDBProject.csproj --configuration Release
 
+      - name: Build DacPac
+        run: dotnet build DBPack/DBPack.csproj --configuration Release
+
       - name: dotnet publish
         run: dotnet publish WebWithDBProject/WebWithDBProject.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
