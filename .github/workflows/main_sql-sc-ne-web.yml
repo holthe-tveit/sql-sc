@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build SQLSC.sln  --configuration Release
+        run: dotnet build SQLSC.Web/SQLSC.Web.csproj  --configuration Release
 
       - name: dotnet publish
         run: dotnet publish SQLSC.Web/SQLSC.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
