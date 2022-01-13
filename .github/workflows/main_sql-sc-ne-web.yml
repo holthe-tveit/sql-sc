@@ -26,7 +26,7 @@ jobs:
         run: dotnet build SQLSC.sln  --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish SQLSC.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish SQLSC.Web/SQLSC.Web.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2

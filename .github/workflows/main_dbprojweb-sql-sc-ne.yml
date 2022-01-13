@@ -23,10 +23,13 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build WebWithDBProject/WebWithDBProject.csproj --configuration Release
+
+      - name: Build DacPac
+        run: dotnet build DBPack/DBPack.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish WebWithDBProject/WebWithDBProject.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
