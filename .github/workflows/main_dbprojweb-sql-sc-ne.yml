@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: DacPac
-          path: DBPack/bin/Release/netstandard/DBPack.dacpac
+          path: ${{env.GITHUB_WORKSPACE}}DBPack/bin/Release/netstandard/DBPack.dacpac
 
   deploy:
     runs-on: ubuntu-latest
