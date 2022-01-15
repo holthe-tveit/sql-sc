@@ -65,8 +65,6 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A3A08F6BDC44B86ACB8CA028E0C42C5 }}
           package: .
 
-      - name: "Get Checkout files"
-        uses: actions/checkout@v1
       - name: "Login to Azure"
         uses: azure/login@v1
         with:
@@ -76,4 +74,4 @@ jobs:
         with: 
           server-name: sql-sc-ne.database.windows.net
           connection-string: ${{ secrets.DACPAC_DB_CON }}
-          dacpac-package: './DBPack/Database.dacpac'
+          dacpac-package: '${PWD}/DBPack/Database.dacpac'
