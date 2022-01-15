@@ -76,4 +76,4 @@ jobs:
         with: 
           server-name: sql-sc-ne.database.windows.net
           connection-string: ${{ secrets.DACPAC_DB_CON }}
-          dacpac-package: '.DBPack/Database.dacpac'
+          dacpac-package: './DBPack/Database.dacpac'
