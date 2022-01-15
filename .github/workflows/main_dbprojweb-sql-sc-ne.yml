@@ -64,12 +64,15 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A3A08F6BDC44B86ACB8CA028E0C42C5 }}
           package: .
-      - name: "Deploy DB to Azure Envionment"
-      - uses: actions/checkout@v1
-      - uses: azure/login@v1
+
+      - name: "Get Checkout files"
+        uses: actions/checkout@v1
+      - name: "Login to Azure"
+        uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: azure/sql-action@v1
+      - name: "Run DacPac"
+        uses: azure/sql-action@v1
         with:        
           connection-string: ${{ secrets.DACPAC_DB_CON }}
           dacpac-package: '.DBPack/Database.dacpac'
