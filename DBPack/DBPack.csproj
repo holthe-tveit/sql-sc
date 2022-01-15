@@ -1,0 +1,11 @@
+<Project Sdk="MSBuild.Sdk.SqlProj/1.17.3">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+        <SqlServerVersion>Sql150</SqlServerVersion>
+	<BundledNETCoreAppTargetFrameworkVersion>5.0</BundledNETCoreAppTargetFrameworkVersion>
+  </PropertyGroup>
+	<ItemGroup>
+		<Content Include="..\DatabaseProject\dbo\**\*.sql" />
+	</ItemGroup>
+</Project>
