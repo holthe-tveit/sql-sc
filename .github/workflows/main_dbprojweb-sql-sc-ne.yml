@@ -43,6 +43,12 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
+      - name: Upload DacPac artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: DacPac
+          path: DBPack/DBPack.dacpac
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -74,4 +80,4 @@ jobs:
         with: 
           server-name: sql-sc-ne.database.windows.net
           connection-string: ${{ secrets.DACPAC_DB_CON }}
-          dacpac-package: 'DBPack/Database.dacpac'
+          dacpac-package: 'DBPack/DBPack.dacpac'
