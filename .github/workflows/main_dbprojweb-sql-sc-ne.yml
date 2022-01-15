@@ -61,6 +61,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: .net-app
+      - name: Download  dacpac artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: DacPac
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
