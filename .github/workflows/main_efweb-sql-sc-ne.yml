@@ -6,7 +6,12 @@ name: Build and deploy ASP.Net Core app to Azure Web App - efweb-sql-sc-ne
 on:
   push:
     branches:
-      - main
+    - 'main'
+    paths:
+      - 'WebWithEFC6/**'
+  pull_request:
+    paths:
+    - 'WebWithEFC6/**'
   workflow_dispatch:
 
 jobs:

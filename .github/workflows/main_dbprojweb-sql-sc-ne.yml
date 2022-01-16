@@ -6,7 +6,16 @@ name: Build and deploy ASP.Net Core app to Azure Web App - dbprojweb-sql-sc-ne
 on:
   push:
     branches:
-      - main
+    - 'main'
+    paths:
+      - 'DBPack/**'
+      - 'DatabaseProject/**'
+      - 'WebWithDBProject/**'
+  pull_request:
+    paths:
+      - 'DBPack/**'
+      - 'DatabaseProject/**'
+      - 'WebWithDBProject/**'
   workflow_dispatch:
 
 jobs:

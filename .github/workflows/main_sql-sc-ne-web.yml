@@ -6,7 +6,14 @@ name: Build and deploy ASP.Net Core app to Azure Web App - sql-sc-ne-web
 on:
   push:
     branches:
-      - main
+    - 'main'
+    paths:
+      - 'sql/**'
+      - 'SQLSC.Web/**'
+  pull_request:
+    paths:
+    - 'sql/**'
+    - 'SQLSC.Web/**'
   workflow_dispatch:
 
 jobs:

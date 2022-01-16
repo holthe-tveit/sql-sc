@@ -15,3 +15,8 @@ This stores what the end state should be like, and leave it up to the system to 
 Where both Imperative and DSC approaches are used.
     * <a href="https://www.red-gate.com/products/sql-development/sql-source-control/" target="_blank">Red-Gate SQL Source Control</a>
 
+## CI/CD Pipelines
+In a Continuous Integration / Continuous Deployment pipeline as well as DevOps in general we want to make the inner loop as quick and safe as possible so we can deliver value and gain insights as soon as possible.  
+Databases have a long history of not being fully integrated into this pipeline, and this has been and are still causing great problems for many teams.
+
+Here we will cover GitHub Actions and deploying to Azure SQL, but any CI/CD pipeline will work. GitHub was simply chosen to learn of what it provides.
