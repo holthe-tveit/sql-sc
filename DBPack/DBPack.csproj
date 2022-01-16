@@ -2,7 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-        <SqlServerVersion>Sql150</SqlServerVersion>
+        <SqlServerVersion>SqlAzure</SqlServerVersion>
+		<GenerateCreateScript>True</GenerateCreateScript>
+      <IncludeCompositeObjects>True</IncludeCompositeObjects>
 	<BundledNETCoreAppTargetFrameworkVersion>5.0</BundledNETCoreAppTargetFrameworkVersion>
   </PropertyGroup>
 	<ItemGroup>
