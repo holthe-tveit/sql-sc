@@ -66,6 +66,12 @@ jobs:
         with:
           name: DacPac
 
+      - name: "Run DacPac"
+        uses: azure/sql-action@v1
+        with: 
+          server-name: sql-sc-ne.database.windows.net
+          connection-string: ${{ secrets.DACPAC_DB_CON }}
+          dacpac-package: 'DBPack.dacpac'
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -75,10 +81,10 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4A3A08F6BDC44B86ACB8CA028E0C42C5 }}
           package: .
 
-      - name: "Login to Azure"
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      #- name: "Login to Azure"
+      #  uses: azure/login@v1
+      #  with:
+      #    creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: "Run DacPac"
         uses: azure/sql-action@v1
         with: 
