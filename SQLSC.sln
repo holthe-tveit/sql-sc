@@ -10,7 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		SQLSC\.Dockerfile = SQLSC\.Dockerfile
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{053BF1C9-6E6E-4F8F-9DAE-9DB76494D663}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{053BF1C9-6E6E-4F8F-9DAE-9DB76494D663}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\flyway-migration-test.yaml = .github\workflows\flyway-migration-test.yaml
+		.github\workflows\main_dbprojweb-sql-sc-ne.yml = .github\workflows\main_dbprojweb-sql-sc-ne.yml
+		.github\workflows\main_efweb-sql-sc-ne.yml = .github\workflows\main_efweb-sql-sc-ne.yml
+		.github\workflows\main_sql-sc-ne-web.yml = .github\workflows\main_sql-sc-ne-web.yml
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWithEFC6", "WebWithEFC6\WebWithEFC6.csproj", "{719AF4E7-EFC1-484F-9E82-C9F7D40687C0}"
 EndProject
@@ -19,6 +25,23 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebWithDBProject", "WebWithDBProject\WebWithDBProject.csproj", "{83C336AD-1186-4D48-B2C2-1C7C35E44512}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBPack", "DBPack\DBPack.csproj", "{B4E5AE8B-1A2F-40E5-92FD-360EDA5ED680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Flyway", "1 Flyway", "{233E11B2-3C9C-4402-94B8-17DF6B57E109}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\flyway-migration-test.yaml = .github\workflows\flyway-migration-test.yaml
+		flyway.conf = flyway.conf
+		.github\workflows\main_sql-sc-ne-web.yml = .github\workflows\main_sql-sc-ne-web.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Enity Framwork", "2 Enity Framwork", "{D8B35FDA-CC29-44BD-AE73-B92FF5D68B50}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main_efweb-sql-sc-ne.yml = .github\workflows\main_efweb-sql-sc-ne.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 DacPac DBProj", "3 DacPac DBProj", "{3C9290E4-EEED-45C1-8B7F-E17D240C62E8}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main_dbprojweb-sql-sc-ne.yml = .github\workflows\main_dbprojweb-sql-sc-ne.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,7 +76,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{601C4F97-585C-4AC1-9CE2-42FB5A985A9F} = {233E11B2-3C9C-4402-94B8-17DF6B57E109}
 		{053BF1C9-6E6E-4F8F-9DAE-9DB76494D663} = {B28814BE-5DA4-40E0-BC2E-B53836F47CF4}
+		{719AF4E7-EFC1-484F-9E82-C9F7D40687C0} = {D8B35FDA-CC29-44BD-AE73-B92FF5D68B50}
+		{2D696C96-B3C2-4ABA-BC3A-5E6A4E2085A1} = {3C9290E4-EEED-45C1-8B7F-E17D240C62E8}
+		{83C336AD-1186-4D48-B2C2-1C7C35E44512} = {3C9290E4-EEED-45C1-8B7F-E17D240C62E8}
+		{B4E5AE8B-1A2F-40E5-92FD-360EDA5ED680} = {3C9290E4-EEED-45C1-8B7F-E17D240C62E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {139824B1-BE23-42C8-9156-C96BDDB2E887}
