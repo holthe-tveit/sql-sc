@@ -10,12 +10,14 @@
 	<ItemGroup>
 		<None Include="..\sql\**\*.sql">
 			<Link>sql\%(RecursiveDir)/%(FileName)%(Extension)</Link>
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
   </ItemGroup>
+
+ 
 
 </Project>
