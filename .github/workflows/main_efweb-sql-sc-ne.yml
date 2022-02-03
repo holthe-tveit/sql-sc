@@ -1,4 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+﻿# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy ASP.Net Core app to Azure Web App - efweb-sql-sc-ne
@@ -33,11 +33,23 @@ jobs:
       - name: dotnet publish
         run: dotnet publish WebWithEFC6/WebWithEFC6.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+      - name: dotnet restore tools
+        run: |
+            cd WebWithEFC6 
+            dotnet tool-manifest restore
+            dotnet ef migrations bundle --self-contained --force -r linux-x64
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+
+      - name: Upload Ef migrations artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: efmigration
+          path: ${{github.workspace}}/WebWithEFC6/efbundle
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,6 +63,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: .net-app
+      - name: Download  efmigration artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: efmigration
+
+      - name: "Run efmigrations"
+        run: efbundle --help
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
