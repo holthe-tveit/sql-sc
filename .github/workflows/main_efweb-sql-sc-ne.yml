@@ -71,7 +71,7 @@ jobs:
       - name: "Run efmigrations"
         run: |
             chmod +x ${{ github.workspace }}/efbundle
-            ${{ github.workspace }}/efbundle migrate --connection "${{ secrets.EFWEB_DB_CON }}"
+            ${{ github.workspace }}/efbundle --connection "${{ secrets.EFWEB_DB_CON }}"
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
