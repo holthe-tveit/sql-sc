@@ -67,9 +67,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: efmigration
-
-      - name: "Run efmigrations"
-        run: ./efbundle --help
+        run:  ./efbundle --help
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
