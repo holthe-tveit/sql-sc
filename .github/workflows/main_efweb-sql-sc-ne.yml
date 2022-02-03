@@ -69,7 +69,7 @@ jobs:
           name: efmigration
 
       - name: "Run efmigrations"
-        run: efbundle --help
+        run: ${PWD}/efbundle --help
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
