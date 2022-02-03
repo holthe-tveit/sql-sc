@@ -75,7 +75,7 @@ jobs:
             echo "pr.ref = ${{github.event.pull_request.head.ref}}"
             echo "github.ref = ${{ github.ref }}"
             echo "$GITHUB_CONTEXT"
-            ${{ github.workspace }}"/efbundle --help
+            ${{ github.workspace }}/efbundle --help
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
