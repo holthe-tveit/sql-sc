@@ -67,7 +67,15 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: efmigration
-        run:  ./efbundle --help
+
+      - name: "Run efmigrations"
+        run: |
+            echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+            echo "github.workspace = ${{ github.workspace }}"
+            echo "pr.ref = ${{github.event.pull_request.head.ref}}"
+            echo "github.ref = ${{ github.ref }}"
+            echo "$GITHUB_CONTEXT"
+            ${{ github.workspace }}"/efbundle --help
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
