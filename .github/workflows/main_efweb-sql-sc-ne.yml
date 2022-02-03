@@ -38,6 +38,7 @@ jobs:
             cd WebWithEFC6 
             dotnet tool restore
             dotnet ef migrations bundle --self-contained --force -r linux-x64
+            dotnet ef migrations script -o migrations.sql
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -45,12 +46,17 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-      - name: Upload Ef migrations artifact for deployment job
+      - name: Upload Ef migrations binary artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: efmigration
           path: ${{github.workspace}}/WebWithEFC6/efbundle
 
+      - name: Upload Ef migrations sql script artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: sqlscript
+          path: ${{github.workspace}}/WebWithEFC6/migrations.sql
   deploy:
     runs-on: ubuntu-latest
     needs: build
