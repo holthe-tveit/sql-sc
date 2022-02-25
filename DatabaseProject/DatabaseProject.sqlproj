@@ -64,6 +64,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\TableA.sql" />
     <Build Include="dbo\Tables\TableB.sql" />
+    <Build Include="dbo\Tables\TableC.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseProject.publish.xml" />
