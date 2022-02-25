@@ -35,6 +35,12 @@ namespace WebWithEFC6.Models
 
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });
+            modelBuilder.Entity<Table2>(entity =>
+            {
+                entity.ToTable("Table2");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }

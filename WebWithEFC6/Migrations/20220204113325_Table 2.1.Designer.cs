@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebWithEFC6.Models;
 
@@ -10,9 +11,10 @@ using WebWithEFC6.Models;
 namespace WebWithEFC6.Migrations
 {
     [DbContext(typeof(SQLSC_EFCContext))]
-    partial class SQLSC_EFCContextModelSnapshot : ModelSnapshot
+    [Migration("20220204113325_Table 2.1")]
+    partial class Table21
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
