@@ -57,7 +57,13 @@ jobs:
       - name: Deploy migrations to Azure SQL
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
       - run: docker run -v ${PWD}/sql:/flyway/sql --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
-        
+
+      - name: Run tSQLt tests through powershell       
+        uses: actions/checkout@v2
+      - run: |
+          ./sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}"
+        shell: pwsh  
+
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
