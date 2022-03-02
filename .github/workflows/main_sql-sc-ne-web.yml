@@ -61,8 +61,9 @@ jobs:
 
       - name: Run tSQLt tests through powershell       
         shell: pwsh
+        uses: actions/checkout@v2
         run: |
-           ${{ github.workspace }}/sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}" 
+           ./sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}" 
         
 
       - name: Upload tsql artifact
