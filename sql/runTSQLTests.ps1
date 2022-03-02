@@ -1,6 +1,4 @@
-param(
-	[string]$ConnectionString
-)
+
 Install-Module -Name SqlServer -Scope CurrentUser -Confirm
 Import-Module SqlServer
 
