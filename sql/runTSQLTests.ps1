@@ -4,4 +4,5 @@ param(
 Install-Module -Name SqlServer -Scope CurrentUser -Confirm
 Import-Module SqlServer
 
-Invoke-Sqlcmd -Query "exec tSQLt.RunAll" -ConnectionString $ConnectionString -OutputAs DataSet -verbose
+$testResult= Invoke-Sqlcmd -Query "exec tSQLt.RunAll" -ConnectionString $ConnectionString -OutputAs DataSet -verbose -AbortOnError *> tSqlTestResult.txt
+return $testResult

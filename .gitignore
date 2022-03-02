@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /WebWithEFC6/efbundle.exe
 /WebWithEFC6/migrations.sql
+/tSqlTestResult.txt
+/tsqlResults.txt

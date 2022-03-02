@@ -61,8 +61,14 @@ jobs:
       - name: Run tSQLt tests through powershell       
         uses: actions/checkout@v2
       - run: |
-          '&  $env:GITHUB_ACTION_PATH/sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}"'
-        shell: pwsh  
+          '&  ${{ github.workspace }}/sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}"'
+        shell: pwsh
+
+      - name: Upload tsql artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: TSQL Test Result
+          path: ${{ github.workspace }}/tSqlTestResult.txt  
 
 
       - name: Deploy to Azure Web App
