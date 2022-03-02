@@ -60,7 +60,7 @@ jobs:
       - run: docker run -v ${PWD}/sql:/flyway/sql --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
 
       -  run: |
-                Install-Module -Name SqlServer -Scope CurrentUser -Confirm
+                Install-Module -Name SqlServer -Scope CurrentUser -Confirm:$false
                 Import-Module SqlServer
                 Invoke-Sqlcmd -Query "exec tSQLt.RunAll" -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}" -OutputAs DataSet -verbose -AbortOnError *> tSqlTestResult.txt
          shell: pwsh
