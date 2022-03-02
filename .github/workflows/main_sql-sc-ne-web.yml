@@ -10,7 +10,7 @@ on:
     paths:
       - 'sql/**'
       - 'SQLSC.Web/**'
-      - '.github\workflows\main_sql-sc-ne-web.yml'
+      - '.github\workflows\**'
   pull_request:
     paths:
     - 'sql/**'
