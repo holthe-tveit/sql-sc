@@ -63,7 +63,8 @@ jobs:
                 Install-Module -Name SqlServer -Scope CurrentUser -Confirm
                 Import-Module SqlServer
                 Invoke-Sqlcmd -Query "exec tSQLt.RunAll" -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}" -OutputAs DataSet -verbose -AbortOnError *> tSqlTestResult.txt
-                
+         shell: pwsh
+         
       - name: Upload tsql artifact
         uses: actions/upload-artifact@v2
         with:
