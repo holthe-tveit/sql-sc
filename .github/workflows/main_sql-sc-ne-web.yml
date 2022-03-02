@@ -61,7 +61,7 @@ jobs:
       - name: Run tSQLt tests through powershell       
         uses: actions/checkout@v2
       - run: |
-          sql/runTSQTests.ps1 -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}"
+          '&  $env:GITHUB_ACTION_PATH/sql/runTSQTests.ps1'' -ConnectionString "${{secrets.FLYWAY_DB_CONNECTION}}"
         shell: pwsh  
 
 
