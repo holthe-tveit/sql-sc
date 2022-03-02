@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
       - run: docker run -v ${PWD}/sql:/flyway/sql --rm flyway/flyway -url="${{secrets.PROD_DB_CONNECTION}}" migrate
 
-      -  run: pwsh -command "./sql/runTSQTests.ps1 -ConnectionString '${{secrets.FLYWAY_DB_CONNECTION}}'" 
+      -  run: pwsh -command "${{ github.workspace }}/sql/runTSQTests.ps1 -ConnectionString '${{secrets.FLYWAY_DB_CONNECTION}}'" 
          
 
       - name: Upload tsql artifact
